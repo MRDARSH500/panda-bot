@@ -16,7 +16,7 @@ console.log("log");
 
 
  client.on('message', message => {
-    if (message.content.startsWith("!رابط")) {
+    if (message.content.startsWith((prefix + "رابط"))) {
 
   message.channel.createInvite({
         thing: true,
@@ -68,12 +68,12 @@ if (msg.content.startsWith(prefix + 'cal')) {
  
 
 client.on('message', msg => {
-    if(msg.content.startsWith('!link')) {
+    if(msg.content.startsWith(prefix + 'inv7')) {
     if(msg.channel.type === 'dm') return;
 const user = msg.mentions.users.first();
 if(!user) return msg.channel.send('``' + '**قم بتحديد بوت**' + '``')
 if(!user.bot) return msg.reply('\`منشن بوت\`');
-msg.channel.send(`**Bot InviteURL : ** https://discord.gg/NuH3ZGU=${user.id}&scope=bot&permissions=384064`)
+msg.channel.send(`**Bot InviteURL : ** https://discord.gg/NuH3ZGU=$NTA1MTY2NzU0NzIxNTYyNjI0.XLpcfw.gL-0-igZ7mvbUWSn-ichB6_fE5k&scope=bot&permissions=384064`)
     }
 });
   
@@ -118,7 +118,7 @@ client.setInterval(function() {
 
 
 client.on('message', message => {
-    if(message.content == '!bans'){
+    if(message.content == (prefix + 'ban')){
         message.guild.fetchBans().then(bans => {
             bans.forEach(user => {
                message.channel.send('\`#\` <@'+ user.id + '>');
